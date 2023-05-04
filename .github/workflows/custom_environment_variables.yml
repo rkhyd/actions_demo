@@ -1,3 +1,4 @@
+# scope of env variables demo
 name: 'Custon env vars'
 
 # manual run from actions menu
@@ -23,8 +24,8 @@ jobs:
     - name: print-values-of-env-vars
       run: |
         echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        echo "testvar $testvar"
-        echo "testvar ${{ env.testvar }}"
+        echo "testvar $testvar  - insdie of step"
+        echo "testvar ${{ env.testvar }} - inside of step"
       # These variables are scope to this specific step
       env:
         First_Name: Student

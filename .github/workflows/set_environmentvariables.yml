@@ -1,0 +1,17 @@
+name: 'custom GITHUB_ENV vars'
+
+on: workflow_dispatch
+
+jobs: 
+  custom_GIHUB_ENV_var_demo: # NO spaces allowd in job name
+    runs-on: ubuntu-latest
+    steps:
+    - name: set the value
+      id: step_one
+      run: |
+        echo " actions_state=yellow" >> $GITHUB_ENV
+
+    - name: use the value
+      id: step_two
+      run: | 
+        echo ":${{ env.action_state }}" # This will output yellow
